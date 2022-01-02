@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<project name="newteq-website" default="Deploy">
+
+	<target name="Deploy" >
+
+		<delete includeEmptyDirs="true">
+			<fileset dir="/var/www/html" includes="**/*">
+			</fileset>
+		</delete>
+
+		<copy todir="/var/www/html" overwrite="true" force="true">
+			<fileset dir=".">
+				<exclude name="build.xml" />
+				<exclude name=".git" />
+				<exclude name="README" />
+			</fileset>
+		</copy>
+
+	</target>
+
+</project>
